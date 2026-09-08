@@ -5,6 +5,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+import { errorHandlerMiddleware } from "../middlewares/ErrorHandler.js";
 
 import { getImages } from "./handlers/images.js";
 import { getProperty } from "./handlers/property.js";
@@ -33,6 +34,7 @@ app.get("/images", getImages);
 
 
 //ErrorHandlers
+app.use(errorHandlerMiddleware)
 
 
 const startApp = () => {
