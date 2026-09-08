@@ -1,0 +1,176 @@
+/* highlight section styles  */
+
+.highlight-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 24px;
+    background-color: rgb(79 170 43 / 10%);
+    border-radius: 8px;
+    margin-top: 28px;
+}
+
+.highlight-top-section-cards-container{
+    margin-top: 24px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.highlight-section-container-divider{
+    width: 60%; 
+    height: 2px;
+    background-color: rgb(197, 187, 187); 
+    border-radius: 8px; 
+    display: none; 
+    align-items: start; 
+    justify-content: start;
+    margin-top: 28px;
+    align-self: center;
+}
+
+.highlight-section-container-divider-insider{
+    height: 100%;
+    width: 60%; 
+    background-color: green; 
+    border-radius: 8px;
+}
+
+@media(max-width:1024px){
+    .highlight-top-section-cards-container{
+        margin-top: 24px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .highlight-top-section-cards-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .highlight-top-section-single-card-container:nth-child(n + 3) {
+        display: none;
+    }
+    .highlight-section-container-divider{
+        display: flex;
+    }
+
+}
+
+.highlight-top-section-single-card-container{
+    background-color: white;
+    border-radius: 8px;
+    border: rgb(208, 199, 199) solid 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 18px;
+    padding-right: 0%; 
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: rgba(41, 44, 41);
+    font-size: 14px;
+}
+
+.highlight-top-section-card-icon{
+    height: 36px;
+    fill: rgb(113, 139, 113);
+    margin-bottom: 18px;
+}
+
+.highlight-top-section-card-description {
+
+    width: 60%;
+
+    margin-top: 8px;
+
+    margin-bottom: 8px;
+
+}
+
+.highlight-top-section-card-course-info {
+
+    color: rgba(41, 44, 41, 0.8);
+
+    margin-top: 4px;
+
+}
+
+.highlight-top-section-card-summary {
+
+    width: 75%;
+
+    color: rgba(41, 44, 41, 0.6);
+
+    margin-top: 14px;
+
+}
+
+.highlight-bottom-section-cards-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.highlight-bottom-section-single-card-container{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap:34px;
+    flex:1;
+}
+
+.highlight-bottom-section-card-icon {
+
+    height: 42px;
+
+    fill: rgb(113, 139, 113);
+
+}
+
+.highlight-bottom-section-single-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.highlight-bottom-section-single-card-description {
+    font-size: small;
+    opacity: 0.8;
+}
+.special-package-section{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.special-package-section p{
+    font-size: small;
+}
+
+@media(max-width:767px) {
+    .special-package-section{
+        flex-direction: column;
+        gap: 8px;
+    }
+    .special-package-section p{
+        width: 300px;
+        text-align: center;
+    }
+}

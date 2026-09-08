@@ -1,0 +1,218 @@
+/* weather pattern styles  */
+
+.weather-pattern-section{
+    margin-top: 48px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-section {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to right,
+            #3E6371 0%,
+            #3C7778 50%,
+            #389081 100%);
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.weather-header-location {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 4px;
+}
+
+.weather-header-location p {
+    font-weight: 500;
+    color: rgb(199, 241, 243);
+}
+
+.weather-header-location p:first-child {
+    font-size: 20px;
+}
+
+.weather-header-location p:last-child {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.weather-header-divider {
+    height: 60%;
+    width: 1px;
+    background-color: rgb(162, 210, 210);
+}
+
+.weather-forecast-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.weather-forecast-day {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.weather-day-name {
+    font-size: small;
+    color: rgb(199, 241, 243);
+}
+
+.weather-icon {
+    height: 36px;
+    fill: rgb(162, 210, 210);
+}
+
+.weather-temperature {
+    font-size: x-small;
+    color: rgb(199, 241, 243);
+}
+
+/* course feature section weather styles */
+
+.course-feature-section-weather {
+
+    width: 100%;
+    border: rgb(214, 206, 206) solid 1px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding-bottom: 48px;
+
+}
+
+.course-feature-section-weather-heading {
+
+    opacity: 0.8;
+    margin-bottom: 18px;
+
+}
+
+.course-feature-section-weather-container {
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+}
+
+.course-feature-section-weather-single-container {
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+
+}
+
+.course-feature-section-weather-icon {
+
+    height: 36px;
+    fill: rgba(40, 63, 48, 0.918);
+
+}
+
+.course-feature-section-weather-sub-heading {
+
+    opacity: 0.8;
+    margin-top: 12px;
+
+}
+
+.course-feature-section-weather-description {
+
+    font-size: small;
+    opacity: 0.8;
+    margin-top: 8px;
+
+}
+
+.course-feature-section-weather-divider {
+
+    width: 100%;
+    height: 1px;
+    background-color: rgb(182, 179, 179);
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+}
+
+.course-feature-section-weather-heading-small {
+
+    opacity: 0.8;
+
+}
+
+
+@media(max-width:767px) {
+    .weather-header{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* gap: 4px; */
+        margin-bottom: 8px;
+    }
+    .weather-forecast-container {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
+    }
+    .weather-section {
+        height: auto;
+    }
+    .weather-header-location{
+        margin-top: 12px;
+    }
+    .weather-forecast-container{
+        margin-bottom: 8px;
+    }
+    .course-feature-section-weather{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .course-feature-section-weather-container{
+        grid-template-columns: 1fr;
+    }
+    .course-feature-section-weather-single-container:nth-child(n+2){
+        display: none;
+    }
+    .course-feature-section-weather-single-container{
+        align-items: center;
+        justify-content: center;
+    }
+    .course-feature-section-weather-single-container p{
+        /* width: 30%; */
+        text-align: center;
+    }
+}

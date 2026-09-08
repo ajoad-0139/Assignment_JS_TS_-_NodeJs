@@ -1,0 +1,243 @@
+/* footer section styles  */
+
+.footer-section{
+
+    width: 100vw;
+    height: 80vh;
+    margin-top:20vh;
+    position: relative;
+}
+
+.footer-link-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+}
+
+.footer-link-container-column{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 8px;
+}
+
+.footer-link{
+    font-size: x-small;
+    color: rgb(106, 238, 106);
+    cursor: pointer;
+}
+.footer-link:hover{
+    color: rgb(66, 164, 66);
+}
+
+/* footer section styles */
+
+.footer-section-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-section-overlay {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.footer-section-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    gap: 64px;
+}
+
+@media (max-width:1024px) {
+    .footer-section-container{
+        flex-direction: column;
+    }
+}
+
+.footer-section-social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 12px;
+}
+
+.footer-section-social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 24px;
+}
+
+.footer-section-social-icon {
+    height: 24px;
+    fill: rgb(48, 197, 48);
+}
+
+.footer-section-select-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    width: 280px;
+    height: 28px;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.footer-section-select {
+    flex: 1;
+    background-color: transparent;
+    color: rgb(48, 197, 48);
+    font-size: x-small;
+    font-weight: 700;
+    border: rgb(48, 197, 48) solid 2px;
+    border-radius: 4px;
+}
+
+.footer-section-select-option {
+    background-color: transparent;
+    color: rgb(48, 197, 48);
+}
+
+.footer-section-brand-container {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.footer-section-brand-icon {
+    height: 56px;
+}
+
+.footer-section-brand-name {
+    font-family: Shizuru;
+    font-size: 34px;
+    color: rgb(57, 185, 57);
+}
+
+.footer-section-brand-divider {
+    height: 46px;
+    margin-top: 4px;
+    width: 1px;
+    background-color: rgb(45, 193, 45);
+}
+
+.footer-section-brand-description {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 100%;
+}
+
+.footer-section-brand-description-text {
+    font-size: small;
+    color: rgb(52, 182, 52);
+}
+
+
+@media (max-width: 767px) {
+
+    .footer-section {
+        height: auto;
+        min-height: auto;
+        margin-top: 48px;
+    }
+    .footer-section-background-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .footer-section-overlay {
+        position: relative;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        z-index: 70;
+        padding: 40px 24px;
+        box-sizing: border-box;
+    }
+
+    .footer-section-content {
+        height: auto;
+        width: 100%;
+        display: block;
+    }
+
+    .footer-section-container {
+        width: 100%;
+        align-items: center;
+        gap: 40px;
+    }
+    .footer-link-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        column-gap: 20px;
+        width: 100%;
+    }
+
+    .footer-link-container-column {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-link {
+        font-size: 12px;
+    }
+
+    .footer-section-social-container {
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-section-social-icons {
+        justify-content: center;
+    }
+
+    .footer-section-select-container {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footer-section-brand-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .footer-section-brand-divider {
+        display: none;
+    }
+
+    .footer-section-brand-description {
+        align-items: center;
+    }
+}

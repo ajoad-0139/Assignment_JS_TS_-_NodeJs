@@ -1,0 +1,88 @@
+/* course feature section styles */
+
+.course-feature-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    margin-top: 24px;
+}
+
+.course-feature-section-container{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+
+.course-feature-section-single-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 32px;
+    border: rgb(211, 202, 202) solid 1px;
+    border-radius: 2px;
+}
+
+.course-feature-section-heading {
+    opacity: 0.9;
+}
+
+.course-feature-section-list {
+    margin-top: 12px;
+    padding-left: 18px;
+}
+
+.course-feature-section-list-item {
+    font-size: small;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+.course-feature-section-sub-heading {
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+.course-feature-section-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(197, 189, 189);
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.course-feature-section-best-time-heading {
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+.course-feature-section-best-time-description {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+
+@media (max-width:767px) {
+    .course-feature-section-container{
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+    .course-feature-section-best-time-heading {
+        width: 60%;
+        text-align: center;
+        align-self: center;
+    }
+    .course-feature-section-best-time-description {
+        text-align: center;
+    }
+}

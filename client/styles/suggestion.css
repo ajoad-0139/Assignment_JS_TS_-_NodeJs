@@ -1,0 +1,183 @@
+/* course suggestion section styles */
+
+.course-suggestion-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    margin-top: 24px;
+}
+
+@media(max-width:1024px) {
+    .course-suggestion-section{
+        display: none;
+    }
+}
+
+.course-suggestion-section-container {
+    padding-bottom: 18px;
+    width: 100%;
+    margin-top: 12px;
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    gap: 18px;
+}
+
+.course-suggestion-section-card {
+    padding-bottom: 18px;
+    flex: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.course-suggestion-section-card-image-container {
+    width: 100%;
+    height: 180px;
+    flex-shrink: 0;
+    min-height: 0;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.course-suggestion-section-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.course-suggestion-section-card-content {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 8px;
+}
+
+.course-suggestion-section-card-heading {
+    opacity: 0.9;
+}
+
+.course-suggestion-section-card-distance {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.8;
+}
+
+.course-suggestion-section-card-distance-icon {
+    height: 16px;
+    fill: rgb(32, 78, 32);
+}
+
+.course-suggestion-section-card-distance-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(32, 78, 32);
+}
+
+.course-suggestion-section-card-stats {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+    color: rgb(148, 139, 139);
+    font-size: x-small;
+    opacity: 0.8;
+}
+
+.course-suggestion-section-card-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.course-suggestion-section-card-stat-icon {
+    height: 14px;
+    fill: rgb(148, 139, 139);
+}
+
+.course-suggestion-section-card-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(213, 201, 201);
+}
+
+.course-suggestion-section-card-highlight {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.course-suggestion-section-card-highlight-icon {
+    height: 18px;
+    fill: rgb(39, 150, 109);
+}
+
+.course-suggestion-section-card-highlight-text {
+    color: rgb(39, 150, 109);
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.course-suggestion-section-card-buttons {
+    display: flex;
+    width: 100%;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+}
+
+.course-suggestion-section-card-button {
+    border: gray solid 1px;
+    border-radius: 30px;
+    padding: 8px;
+    font-size: xx-small;
+}
+
+.course-suggestion-section-card-button-primary {
+    border: none;
+    background-color: rgba(85, 214, 85, 0.7);
+    border-radius: 30px;
+    padding: 8px;
+    font-size: xx-small;
+}
+
+.course-suggestion-section-button-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 12px;
+}
+
+.course-suggestion-section-explore-button {
+    font-size: x-small;
+    padding: 8px;
+    border: rgb(201, 191, 191) solid 1px;
+    border-radius: 30px;
+    color: rgb(136, 130, 130);
+}
+
+.course-suggestion-section-navigation-button {
+    border: rgb(205, 196, 196) solid 2px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    padding: 2px;
+}
+
+.course-suggestion-section-navigation-icon {
+    height: 12px;
+    fill: rgb(181, 170, 170);
+}
