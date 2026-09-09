@@ -203,20 +203,22 @@
     }
     .hero-section-summary-content-container{
         align-items: center;
+        /* flex-direction: row; */
         gap: 4px;
     }
     .hero-section-summary-title-box{
         margin-top: 8px;
         margin-bottom: 8px;
-        font-size: x-large; 
+        font-size:small; 
         opacity: 0.8;
         width: auto;
     }
     .hero-section-summary-content-container p{
-        font-size: small;
+        font-size: xx-small;
     }
     .hero-section-summary-content-container svg{
-        height: 28px;
+        height: 18px;
+        flex-shrink: 0;
     }
 }
 
@@ -256,6 +258,7 @@
 .tablet-view-hero-section {
     width: 100%;
     padding: 38px;
+    /* background-color: red; */
     border: rgb(216, 208, 208) solid 1px;
     border-radius: 8px;
     display: flex;
@@ -372,7 +375,23 @@
     padding-right: 22px;
 }
 
+.mv-hero-con{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 4px;
+}
+
 @media(max-width:767px) {
+    .hero-photo-frame{
+        height: 400px;
+    }
+    .hero-t-divider{
+        display: none;
+    }
+    .mv-hero-con{
+        flex-direction: column;
+    }
     .tablet-view-hero-section-container-bottom-up-container{
         width: 100%;
         flex-direction: column;
@@ -387,10 +406,15 @@
     }
     .tablet-view-hero-section-container{
         border: rgb(209, 203, 203) solid 1px;
+        /* background-color: red; */
+        /* width: 100%; */
         border-radius: 8px;
         padding: 12px;
     }
     .tablet-view-hero-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: none;
     }
     .tablet-view-hero-section-container-bottom-container{
@@ -399,6 +423,27 @@
     .tablet-view-hero-section-container-top{
         align-self: center;
     }
+    .hero-image-frame-dots-container{
+        display: none;
+    }
+
+        .tablet-view-hero-section-container-bottom-banner{
+            padding-left:22px;
+            padding-right:22px;
+        }
+    .tablet-view-hero-section-container-bottom-banner p{
+        font-size: x-small;
+        font-weight: 700;
+    }
+        .tablet-view-hero-section-container-bottom-banner-green p {
+            font-size: x-small;
+            font-weight: 700;
+            width: 100%;
+        }
+        .tablet-view-hero-section-container-bottom-banner-green {
+            padding-left: 22px;
+            padding-right: 22px;
+        }
 }
 
 .tablet-view-hero-section-container-bottom-up-container-single{
