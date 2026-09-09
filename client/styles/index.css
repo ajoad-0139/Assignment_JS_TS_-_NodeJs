@@ -6,12 +6,21 @@
     font-family: sans-serif;
 }
 
+:root {
+    --navy: #1e3a5f;
+    --text-dark: #16233f;
+    --green: #1dbf85;
+    --green-hover: #17a674;
+    --divider: #ececec;
+}
+
 /* Body */
 body {
     min-width: 100%;
     min-height: 100vh;
     padding-top: 80px;
     padding-bottom: 0px;
+    overflow-x: hidden;
 }
 
 h1{
