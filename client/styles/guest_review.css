@@ -41,15 +41,15 @@
     }
     .guest-review-section h1{
         align-self: center;
-        width: 30%;
+        /* width: 30%; */
         text-align: center;
     }
     .guest-review-section-single-card-container{
-        width: 60%;
+        /* width: 60%; */
         align-items: center;
     }
     .guest-review-section-single-card-review-text{
-        width: 30%;
+        /* width: 30%; */
         text-align: center;
     }
 }

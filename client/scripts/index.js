@@ -310,6 +310,10 @@ const checkOutText = document.getElementById('check-out-p');
 const totalPrizeElement = document.getElementById('total-prize-id');
 const availabilityMessage = document.getElementById('availability-message-id');
 
+const today = new Date().toISOString().split('T')[0];
+checkInText.innerText=today;
+checkOutText.innerText=today;
+
 const datepicker = new HotelDatepicker(dateInput, {
   format: 'YYYY-MM-DD',
   minNights: 1,
@@ -322,13 +326,39 @@ const datepicker = new HotelDatepicker(dateInput, {
     checkInText.innerText = checkIn;
     checkOutText.innerText = checkOut;
     totalPrizeElement.innerText = '$ ' + totalPrize;
-
-    availabilityMessage.style.display = 'flex';
-    setTimeout(() => {
-      availabilityMessage.style.display = 'none';
-    }, 3000);
   },
 });
+
+let availabilityTimeout;
+let unavailabilityTimeout;
+
+function checkAvailabilityMessage() {
+
+  if (datepicker.getNights() < 1) {
+
+    const unavailabilityMessage = document.getElementById(
+      "unavailability-message-id"
+    );
+
+    unavailabilityMessage.style.display = 'flex';
+
+    clearTimeout(unavailabilityTimeout);
+
+    unavailabilityTimeout = setTimeout(() => {
+      unavailabilityMessage.style.display = 'none';
+    }, 3000);
+
+    return;
+  }
+
+  availabilityMessage.style.display = 'flex';
+
+  clearTimeout(availabilityTimeout);
+
+  availabilityTimeout = setTimeout(() => {
+    availabilityMessage.style.display = 'none';
+  }, 3000);
+}
 
 function pickupDates() {
   console.log('picking up dates ');

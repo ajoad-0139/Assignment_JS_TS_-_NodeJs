@@ -349,13 +349,13 @@
                  <section class="hero-photo-frame" style="position: relative;">
                     <div class="" style="position: absolute; z-index: 70; top: 0; left: 0; right: 0; bottom: 0; ">
                         <div class="" style="height: 100%; width: 100%; display: flex; align-items: end; justify-content: end; padding-bottom: 16px; padding-right: 16px;">
-                            <button onclick="viewAllImages()" style="border: gray solid 1px; padding: 8px; font-size: 12px; color: gray; border-radius: 20px;">
+                            <button onclick="viewAllImages()" class="view-all-btn-hero-section">
                                 <p>VIEW ALL 10 IMAGES</p>
                             </button>
                         </div>
                     </div>
                     <section class="hero-photo-frame-left-section">
-                        <img class="hero-image" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" src="./assets/images/hero_left_img.jpg" alt="hero left section image">
+                        <img class="hero-image" style="border-top-right-radius: 0; border-bottom-right-radius: 0;" src="./assets/images/image-01.jpg" alt="hero left section image">
                         <div class="hero-image-frame-dots-container" >
                             <svg class="hero-image-frame-dot" style="fill: white;" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
@@ -386,10 +386,10 @@
                     </section>
                     <section class="hero-photo-frame-right-section">
                         <section style="flex:1; min-height: 0;">
-                            <img class="hero-image" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" src="./assets/images/hero_right_img_top.webp" alt="hero right top section image">
+                            <img class="hero-image" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" src="./assets/images/image-02.jpg" alt="hero right top section image">
                         </section>
                         <section style="flex:1; min-height: 0;">
-                            <img class="hero-image" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" src="./assets/images/hero_right_img_bottom.avif" alt="hero right bottom section image">
+                            <img class="hero-image" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" src="./assets/images/image-03.jpg" alt="hero right bottom section image">
                         </section>
                     </section>
                  </section>
@@ -463,7 +463,7 @@
                         </section>
                     </section>
                   </section>
-                 <article id="hero-article-id" class="hero-article" style="position: relative;">
+                 <article id="hero-article-id" class="hero-article" style="position: relative; transition: transform 0.9s ease;">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, nisi pariatur impedit iusto, 
                     nulla aliquam sunt veniam a ipsum deserunt aliquid nesciunt vitae repellat dolor quas minus 
                     consequuntur odit omnis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex itaque enim odit? 
@@ -1455,7 +1455,7 @@
             <section class="main-right-content">
                 <section class="booking-card">
                     <div class="booking-price-header">
-                        <p class="booking-price">USD $600</p>
+                        <p class="booking-price">USD $2012</p>
                         <p class="booking-price-label">AVG PER NIGHT</p>
                     </div>
                     <div class="booking-date-container">
@@ -1551,7 +1551,13 @@
                                     d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
                             </svg>
                         </div>
-                        <p class="availability-text">Dates selected are available</p>
+                        <p class="availability-text" style="color: green;">Dates selected are available</p>
+                    </div>
+                    <div id="unavailability-message-id" class="availability-message">
+                        <div class="availability-icon" style="color: white; background-color: red;">
+                            &times;
+                        </div>
+                        <p class="availability-text" style="color: red;">Dates selected are not available</p>
                     </div>
                     <div class="price-per-night">
                         <p>Prize per night</p>
@@ -1561,7 +1567,7 @@
                         <p>TOTAL PRICE</p>
                         <p id="total-prize-id">USD $0</p>
                     </div>
-                    <button class="availability-button">
+                    <button onclick="checkAvailabilityMessage()" class="availability-button">
                         <p class="availability-button-text">CHECK AVAILABILITY</p>
                     </button>
                     <p class="booking-redirect-text">

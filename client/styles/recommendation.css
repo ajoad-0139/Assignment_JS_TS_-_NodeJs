@@ -411,6 +411,10 @@
 }
 
 
+.recommendation-single-card-container:hover{
+    box-shadow: 0 4px 10px rgba(47, 92, 216, 0.9);
+}
+
 @media (max-width: 1024px) {
 
     .recommendation-cards-and-map-container {
