@@ -20,6 +20,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// frontend folder
+const frontendPath = path.join(__dirname, "../../client");
+
+// Serve frontend files
+app.use(express.static(frontendPath));
+
+// server.js — add a config endpoint
+app.get("/api/config", (req, res) => {
+    res.json({ googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY });
+});
+
 // Server health check
 app.get("/health", (req, res) => {
     res.status(200).send("Server is healthy!");

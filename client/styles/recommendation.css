@@ -445,7 +445,7 @@
         width: 100%;
         height: auto;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 10px;
         row-gap: 12px;
         overflow: hidden;
@@ -470,6 +470,7 @@
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         scrollbar-width: none;
+        margin-bottom: 12px;
     }
 
     .recommendation-cards-container::-webkit-scrollbar {
@@ -482,8 +483,8 @@
         height: 650px;
         display: flex;
         flex-direction: column;
-        border: none;
-        box-shadow: 0 5px 16px rgba(0, 0, 0, 0.20);
+        border: rgb(202, 195, 195) solid 1px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         border-radius: 12px;
         overflow: hidden;
         scroll-snap-align: start;

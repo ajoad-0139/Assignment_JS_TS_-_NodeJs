@@ -16,6 +16,8 @@ const getDeviceType = () => {
 let sliderImages = [];
 let currentSlide = 0;
 
+
+
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -486,6 +488,9 @@ updateSummary();
 
 // requirement : 4 (nearby properties)
 
+// map location 
+let LOCATIONS = [];
+
 let PROPERTIES = [];
 let FVOURITES = JSON.parse(localStorage.getItem("favourite-properties")) || [];
 
@@ -501,7 +506,8 @@ async function getProperty (filter = "most-popular") {
    PROPERTIES = properties.data;
 
    renderPropertyCards(PROPERTIES);
-  //  console.log("properties : ", properties?.data);
+   updateLocations(PROPERTIES);
+   console.log("properties : ", properties?.data);
 }
 
 getProperty();
@@ -526,7 +532,7 @@ function isFavourite(id) {
 }
 
 function createRecommendationCard(property) {
-    return `<section class="recommendation-single-card-container">
+    return `<section class="recommendation-single-card-container" data-property-id="${property?.ID}">
         <section class="recommendation-single-card-image-section">
             <img class="recommendation-single-card-image" src="${"https://beta.imgservice.rentbyowner.com/640x300/"}${property?.Property?.FeatureImage || ""}" alt="${property?.Property?.PropertyName || "No name"}">
             <div class="recommendation-single-card-image-overlay">
@@ -656,4 +662,132 @@ recommendationContainer.addEventListener("touchend", function(event) {
         // swipe right
         showMobileCard(currentMobileCard - 1);
     }
+});
+
+
+// requirement : 5 ---  Google map realtime location show up and highlighting on hover 
+
+
+let GOOGLE_MAPS_API_KEY;
+
+async function loadConfig() {
+    const res = await fetch("/api/config");
+    const config = await res.json();
+    GOOGLE_MAPS_API_KEY = config.googleMapsApiKey;
+
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&callback=initMap&loading=async`;
+    script.async = true;
+    document.head.appendChild(script);
+}
+
+
+
+function updateLocations(properties) {
+    LOCATIONS = [];
+    properties?.forEach((item) => {
+
+        const { ID, GeoInfo: { Lat, Lng } } = item;
+
+        LOCATIONS.push({
+            id: ID,
+            lat: Number(Lat),
+            lng: Number(Lng)
+        });
+
+    });
+    initMap();
+
+    console.log(LOCATIONS);
+}
+
+
+const markers = {};
+
+window.initMap = function () {
+
+    const map = new google.maps.Map(
+        document.getElementById("map")
+    );
+
+    const bounds = new google.maps.LatLngBounds();
+
+    LOCATIONS.forEach((location) => {
+
+        const position = {
+            lat: location.lat,
+            lng: location.lng
+        };
+
+        const marker = new google.maps.Marker({
+            position: position,
+            map: map
+        });
+
+        // Store marker using property ID
+        markers[location.id] = marker;
+
+        bounds.extend(position);
+    });
+
+    map.fitBounds(bounds);
+};
+
+document.addEventListener("DOMContentLoaded", loadConfig);
+
+const recommendationContainernew = document.getElementById(
+    "recommendation-cards-container-id"
+);
+
+recommendationContainernew.addEventListener("mouseover", (event) => {
+
+    const card = event.target.closest(
+        ".recommendation-single-card-container"
+    );
+
+    if (!card) {
+        return;
+    }
+
+    const propertyId = card.dataset.propertyId;
+
+    const marker = markers[propertyId];
+
+    if (!marker) {
+        return;
+    }
+
+    marker.setIcon({
+        url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+    });
+
+});
+
+
+recommendationContainernew.addEventListener("mouseout", (event) => {
+
+    const card = event.target.closest(
+        ".recommendation-single-card-container"
+    );
+
+    if (!card) {
+        return;
+    }
+
+    if (card.contains(event.relatedTarget)) {
+        return;
+    }
+
+    const propertyId = card.dataset.propertyId;
+
+    const marker = markers[propertyId];
+
+    if (!marker) {
+        return;
+    }
+
+    marker.setIcon({
+        url: " https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+    });
+
 });
