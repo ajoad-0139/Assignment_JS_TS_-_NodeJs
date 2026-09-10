@@ -134,19 +134,22 @@
 
 .recommendation-single-card-overlay-left-content-text{
     color: white;
+    font-size: 20px;
 }
 
 .recommendation-single-card-overlay-right-content{
-    flex: 1;
+    /* flex: 1; */
     min-width: 0;
+    width: auto;
     z-index: 30;
     display: flex;
+    gap: 4px;
 }
 
 .recommendation-single-card-overlay-right-content-icon-box{
     flex-shrink: 0;
-    height: 24px;
-    width: 24px;
+    height: 34PX;
+    width: 34PX;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -191,7 +194,7 @@
 }
 
 .recommendation-single-card-overlay-icon{
-    height: 8px;
+    height: 18px;
     fill: white;
 }
 
@@ -455,13 +458,22 @@
 
 
 @media (max-width: 767px) {
+
     .recommendation-cards-container {
         width: 100%;
         height: 650px;
         display: flex;
         flex-direction: row;
-        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: hidden;
         flex: none;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .recommendation-cards-container::-webkit-scrollbar {
+        display: none;
     }
 
     .recommendation-single-card-container {
@@ -474,6 +486,7 @@
         box-shadow: 0 5px 16px rgba(0, 0, 0, 0.20);
         border-radius: 12px;
         overflow: hidden;
+        scroll-snap-align: start;
     }
 
     .recommendation-single-card-image-section {
@@ -492,6 +505,7 @@
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
     }
+
     .recommendation-single-card-image-overlay {
         padding: 16px;
         border-top-left-radius: 12px;
@@ -510,9 +524,8 @@
     }
 
     .recommendation-single-card-overlay-right-content {
-        flex:none;
+        flex: none;
         margin-left: 12px;
-        /* width: 38px; */
     }
 
     .recommendation-single-card-overlay-right-content-icon-box {
@@ -585,18 +598,21 @@
     .recommendation-single-card-info-icon {
         height: 16px;
     }
+
     .recommendation-single-card-description {
         width: 100%;
         margin-top: 12px;
         font-size: 14px;
         line-height: 1.6;
     }
+
     .recommendation-single-card-location {
         width: 100%;
         margin-top: 10px;
         font-size: 14px;
         line-height: 1.5;
     }
+
     .recommendation-single-card-action-container {
         width: 100%;
         height: 66px;
@@ -638,3 +654,20 @@
         font-size: 12px;
     }
 }
+.reccommendation-favourites-special-class-on{
+    fill: red;
+}
+
+
+/* .recommendation-filter-optn{
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    padding: 0;
+} */
